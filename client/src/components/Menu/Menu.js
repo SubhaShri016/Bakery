@@ -184,8 +184,10 @@ const Menu = () => {
   useEffect(() => {
     const fetchMenu = async () => {
       try {
-        const res = await axios.get("https://bakery-backend-u073.onrender.com/api/menu");
-        setMenu(res.data); // ✅ directly use backend data including image field
+        const res = await axios.get(
+          "https://bakery-backend-u073.onrender.com/api/menu"
+        );
+        setMenu(res.data); // Use backend data including image field
       } catch (err) {
         console.error("Error fetching menu:", err);
       }
@@ -193,20 +195,21 @@ const Menu = () => {
     fetchMenu();
   }, []);
 
-  // Add item to cart
-  const addToCart = async (item) => {
-    try {
-      await axios.post("https://bakery-backend-u073.onrender.com/api/cart/add", {
-        itemId: item._id,
-        quantity: 1,
-      });
-      setMessage(`${item.name} added to cart!`);
-      setTimeout(() => setMessage(""), 2000);
-    } catch (err) {
-      console.error(err);
-      setMessage("Failed to add item.");
-      setTimeout(() => setMessage(""), 2000);
+  // Add item to cart using localStorage
+  const addToCart = (item) => {
+    const existingCart = JSON.parse(localStorage.getItem("cart") || "[]");
+
+    // Check if item already exists in cart
+    const index = existingCart.findIndex((i) => i.itemId === item._id);
+    if (index !== -1) {
+      existingCart[index].quantity += 1;
+    } else {
+      existingCart.push({ ...item, itemId: item._id, quantity: 1 });
     }
+
+    localStorage.setItem("cart", JSON.stringify(existingCart));
+    setMessage(`${item.name} added to cart!`);
+    setTimeout(() => setMessage(""), 2000);
   };
 
   // Get unique categories
@@ -248,4 +251,3 @@ const Menu = () => {
 };
 
 export default Menu;
-
