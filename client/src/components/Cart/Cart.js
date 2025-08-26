@@ -11,7 +11,7 @@ const Cart = () => {
   // Fetch cart from backend
   const fetchCart = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/cart");
+      const res = await axios.get("https://bakery-backend-u073.onrender.com/api/cart");
       setCart(res.data);
     } catch (err) {
       console.error(err);
@@ -24,7 +24,7 @@ const Cart = () => {
 
   const removeItem = async (itemId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/cart/${itemId}`);
+      await axios.delete(`https://bakery-backend-u073.onrender.com/api/cart/${itemId}`);
       fetchCart();
     } catch (err) {
       console.error(err);
@@ -33,7 +33,7 @@ const Cart = () => {
 
   const clearCart = async () => {
     try {
-      await axios.delete("http://localhost:5000/api/cart");
+      await axios.delete("https://bakery-backend-u073.onrender.com/api/cart");
       fetchCart();
       setMessage("Cart cleared!");
       setTimeout(() => setMessage(""), 2000);
@@ -54,7 +54,7 @@ const Cart = () => {
   const handlePayment = async () => {
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/api/orders/confirm");
+      const res = await axios.post("https://bakery-backend-u073.onrender.com/api/orders/confirm");
       if (res.data.success) {
         setMessage(res.data.message);
         setShowPayment(false);
