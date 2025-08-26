@@ -176,27 +176,13 @@ const Cart = () => {
     setShowPayment(true);
   };
 
-  const handlePayment = async () => {
-    setLoading(true);
-    try {
-      const res = await axios.post(
-        "https://bakery-backend-u073.onrender.com/api/orders/confirm",
-        { cart } // optionally send cart to backend if needed
-      );
-      if (res.data.success) {
-        setMessage(res.data.message);
-        setShowPayment(false);
-        updateCart([]); // empty cart after payment
-      } else {
-        setMessage("Payment failed. Try again.");
-      }
-    } catch (err) {
-      console.error(err);
-      setMessage("Payment failed. Try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
+ const handlePayment = () => {
+  // Mock payment success
+  setMessage("Payment successful!");
+  setShowPayment(false);
+  updateCart([]); // clear cart
+};
+
 
   const totalPrice = cart.reduce(
     (sum, item) => sum + item.price * (item.quantity || 1),
