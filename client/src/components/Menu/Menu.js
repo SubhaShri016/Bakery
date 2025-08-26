@@ -98,7 +98,7 @@
    useEffect(() => {
     const fetchMenu = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/menu");
+        const res = await axios.get("https://bakery-backend-u073.onrender.com/api/menu");
 
         // Assign images dynamically based on item index
         const menuWithImages = res.data.map((item, index) => ({
@@ -117,7 +117,7 @@
   // Add item to cart
   const addToCart = async (item) => {
     try {
-      await axios.post("http://localhost:5000/api/cart/add", {
+      await axios.post("https://bakery-backend-u073.onrender.com/api/cart/add", {
         itemId: item._id,
         quantity: 1,
       });
