@@ -8,7 +8,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", { email, password });
+      const res = await axios.post("https://bakery-backend-u073.onrender.com/api/auth/login", { email, password });
       alert("Login successful");
       console.log(res.data);
     } catch (err) {
