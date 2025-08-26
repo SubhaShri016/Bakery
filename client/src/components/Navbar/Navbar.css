@@ -1,0 +1,56 @@
+.navbar {
+  position: relative;           /* static/normal positioning */
+  top: 0;
+  left: 0;
+  width: 100%;                  /* full width */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* links on left, buttons on right */
+  padding: 8px 30px;
+  background-color: #efeeeb;    /* soft bakery/pink background */
+  border-bottom: 2px solid #6b4226; /* optional underline */
+  box-shadow: none;      /* no floating shadow */
+ 
+
+
+position: absolute; /* overlay on top of content */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* above all content */}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  margin-left: 750px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color:#6b4226;              /* brown text */
+  transition: all 0.3s ease;
+  
+ 
+}
+
+.nav-links li a:hover {
+  color: #c4aa19;               /* subtle golden hover */
+  text-shadow: 1px 1px 2px #FFD700;
+}
+
+.login-btn {
+  padding: 8px 15px;
+  background-color: #ff9f1c;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #ffbf69;
+}

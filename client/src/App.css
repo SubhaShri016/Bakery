@@ -1,0 +1,35 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Caveat:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #fff8f0; /* light cream background */
+}
+
+.hero {
+  text-align: center;
+  margin: 80px 20px;
+}
+
+.bakery-name {
+  font-family: 'Allura', cursive;
+  font-size: 3.5rem;
+  color: #6b4226; /* warm brown */
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+  color: #b56576; /* soft pinkish-brown */
+}
+
+footer {
+  background-color: #6b4226;
+  color: white;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 0.9rem;
+}

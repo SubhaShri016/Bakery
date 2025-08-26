@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap');
+
+.about-container {
+  background-color: #ffc0cb; /* soft pink background */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.about-card {
+  background-color: #fff0f5; /* soft contrasting pink card */
+  padding: 45px 35px;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  height: 300px;
+}
+
+.about-title {
+  font-family: 'Playfair Display', serif;
+  color: #6b4226; /* elegant brown */
+  font-size: 2.5rem;
+  margin-bottom: 25px;
+}
+
+.about-text {
+  color: #6b4226;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 40x;
+
+}
